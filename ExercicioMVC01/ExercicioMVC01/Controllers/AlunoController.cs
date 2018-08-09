@@ -46,7 +46,12 @@ namespace ExercicioMVC01.Controllers
         [HttpPost]
         public ActionResult Store(Aluno aluno)
         {
-            ViewBag.aluno = aluno;
+            if (ModelState.IsValid)
+            {
+                int identifier = new AlunoRepository().Cadastrar(aluno);
+                RedirectToAction("Editar", new { id = identifier });
+            }
+            ViewBag.Aluno = aluno;
             return View("Cadastro");
         }
 
@@ -54,6 +59,7 @@ namespace ExercicioMVC01.Controllers
         public ActionResult Update(Aluno aluno)
         {
             bool altered = new AlunoRepository().Alterar(aluno);
+            RedirectToAction("Index");
             return null;
         }
 

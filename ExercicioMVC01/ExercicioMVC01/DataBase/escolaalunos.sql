@@ -1,4 +1,4 @@
-﻿DROP TABLE escolaalunos;
+﻿
 CREATE TABLE escolaalunos(
 	id INT IDENTITY(1,1) PRIMARY KEY,
 	nome VARCHAR(100) NOT NULL,
