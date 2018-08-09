@@ -80,5 +80,18 @@ namespace ExercicioMVC01.Repository
             return aluno;
         }
 
+        public bool Alterar(Aluno aluno)
+        {
+            SqlCommand command = new BancoDados().ObterConexao();
+            command.CommandText = "UPDATE escolaalunos SET nome = @NOME, codigo_matricula = @CODIGO_MATRICULA, nota_1 = @NOTA_1, nota_2 = @NOTA_2, nota_3 = @NOTA_3, frequencia = @FREQUENCIA";
+            command.Parameters.AddWithValue("@NOME", aluno.Nome);
+            command.Parameters.AddWithValue("@CODIGO_MATRICULA", aluno.CodigoMatricula);
+            command.Parameters.AddWithValue("@NOTA_1", aluno.Nota1);
+            command.Parameters.AddWithValue("@NOTA_2", aluno.Nota2);
+            command.Parameters.AddWithValue("@NOTA_3", aluno.Nota3);
+            command.Parameters.AddWithValue("@FREQUENCIA", aluno.Frequencia);
+            return command.ExecuteNonQuery() == 1;
+        }
+
     }
 }
