@@ -36,6 +36,8 @@ namespace ExercicioMVC01.Models
         [Range(0, 100, ErrorMessage = "Frequencia não pode ser menor que 0 nem maior que 100")]
         public byte Frequencia { get; set; }
 
+        public float Media{ get; set; }
 
     }
+
 }

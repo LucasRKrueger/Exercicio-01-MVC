@@ -15,7 +15,7 @@ namespace ExercicioMVC01.Repository
         {
             List<Aluno> alunos = new List<Aluno>();
             SqlCommand command = new BancoDados().ObterConexao();
-            command.CommandText = "SELECT id, nome, codigo_matricula, nota_1, nota_2, nota_3, frequencia FROM escolaalunos";
+            command.CommandText = "SELECT id, nome, codigo_matricula, nota_1, nota_2, nota_3, frequencia, format(((nota_1 + nota_2 + nota_3) / 3), '#.00') FROM escolaalunos";
 
             DataTable table = new DataTable();
             table.Load(command.ExecuteReader());
@@ -29,7 +29,8 @@ namespace ExercicioMVC01.Repository
                     Nota1 = Convert.ToSingle(line[3].ToString()),
                     Nota2 = Convert.ToSingle(line[4].ToString()),
                     Nota3 = Convert.ToSingle(line[5].ToString()),
-                    Frequencia = Convert.ToByte(line[6].ToString())
+                    Frequencia = Convert.ToByte(line[6].ToString()),
+                    Media = Convert.ToSingle(line[7].ToString().Replace(".", ","))
                 };
                 alunos.Add(aluno);
             }

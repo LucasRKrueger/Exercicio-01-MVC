@@ -22,35 +22,35 @@
                 </div>
                 <div class="form-group" id="div-campo-codigo-matricula">
                     <label for="campo-codigo-matricula">Código da Matricula<span class="text-danger font-weight-bold"> * </span></label>
-                    <input type="text" class="form-control" name="Aluno.CodigoMatricula" id="campo-codigo-matricula" placeholder="Digite o Código da Matricula" required="required" value="@ViewBag.Aluno.CodigoMatricula" >
-                    @Html.ValidationMessage("Aluno.CodigoMatricula", new { @class = "text-danger"})
+                    <input type="text" class="form-control" name="Aluno.CodigoMatricula" id="campo-codigo-matricula" placeholder="Digite o Código da Matricula" required="required" value="@ViewBag.Aluno.CodigoMatricula">
+                    @Html.ValidationMessage("Aluno.CodigoMatricula", new { @class = "text-danger" })
                 </div>
                 <div class="form-group" id="div-campo-nota-1">
                     <label for="campo-nota-1">Primeira Nota<span class="text-danger font-weight-bold"> * </span></label>
-                    <input type="text" class="form-control" name="Aluno.Nota1" id="campo-nota-1" placeholder="Informe a Primeira Nota" required="required" value="@ViewBag.Aluno.Nota1">
+                    <input id="campo-nota-1" type="text" name="Aluno.Nota1" data-mask="00,00" class="form-control" onfocusout="media()" placeholder="0,00" onblur="liberar()">
                     @Html.ValidationMessage("Aluno.Nota1", new { @class = "text-danger" })
 
                 </div>
                 <div class="form-group" id="div-campo-nota-2">
-                    <label for="campo-nota-2">Segunda Nota<span class="text-danger font-weight-bold"> * </span></label>
-                    <input type="text" class="form-control" name="Aluno.Nota2" id="campo-nota-2" placeholder="Informe a Segunda Nota" required="required" value="@ViewBag.Aluno.Nota2">
-                    @Html.ValidationMessage("Aluno.Nota2", new  { @class = "text-danger" })
+                    <label for="campo-nota-1">Segunda Nota<span class="text-danger font-weight-bold"> * </span></label>
+                    <input id="campo-nota-2" type="text" name="Aluno.Nota2" data-mask="00,00" class="form-control" onfocusout="media()" placeholder="0,00" onblur="liberar()">
+                    @Html.ValidationMessage("Aluno.Nota2", new { @class = "text-danger" })
                 </div>
                 <div class="form-group" id="div-campo-nota-3">
                     <label for="campo-nota-3">Terceira Nota<span class="text-danger font-weight-bold"> * </span></label>
-                    <input type="text" class="form-control" name="Aluno.Nota3" id="campo-nota-3" placeholder="Informe a Terceira Nota" required="required" value="@ViewBag.Aluno.Nota3">
-                    @Html.ValidationMessage("Aluno.Nota3", new{ @class = "text-danger"})
+                    <input id="campo-nota-3" type="text" name="Aluno.Nota1" data-mask="00,00" class="form-control" onfocusout="media()" placeholder="0,00" onblur="liberar()">
+                    @Html.ValidationMessage("Aluno.Nota3", new { @class = "text-danger" })
                 </div>
                 <div class="form-group" id="div-campo-frequencia">
                     <label for="campo-frequencia">Frequência<span class="text-danger font-weight-bold"> * </span></label>
-                    <input type="text" class="form-control" name="Aluno.Frequencia" id="campo-frequencia" placeholder="Informe a Frequência do Aluno" required="required" value="@ViewBag.Aluno.Frequencia">
-                    @Html.ValidationMessage("Aluno.Frequencia", new { @class = "text-danger"})
+                    <input type="text" class="form-control" name="Aluno.Frequencia" id="campo-frequencia" placeholder="0,00" onfocusout="media()" required="required" value="@ViewBag.Aluno.Frequencia">
+                    @Html.ValidationMessage("Aluno.Frequencia", new { @class = "text-danger" })
 
                 </div>
                 <button class="btn btn-success float-right" type="submit">
                     <i class="fa fa-save"></i> Cadastrar
                 </button>
-</form>
+            </form>
         </div>
     </div>
 
