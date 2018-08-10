@@ -40,7 +40,7 @@ namespace ExercicioMVC01.Controllers
         public ActionResult Excluir(int id)
         {
             bool erased = new AlunoRepository().Excluir(id);
-            return null;
+            return RedirectToAction("Index");
         }
 
         [HttpPost]
@@ -49,7 +49,7 @@ namespace ExercicioMVC01.Controllers
             if (ModelState.IsValid)
             {
                 int identifier = new AlunoRepository().Cadastrar(aluno);
-                RedirectToAction("Editar", new { id = identifier });
+                return RedirectToAction("Index", new { id = identifier });
             }
             ViewBag.Aluno = aluno;
             return View("Cadastro");
@@ -59,8 +59,7 @@ namespace ExercicioMVC01.Controllers
         public ActionResult Update(Aluno aluno)
         {
             bool altered = new AlunoRepository().Alterar(aluno);
-            RedirectToAction("Index");
-            return null;
+            return RedirectToAction("Index");
         }
 
 

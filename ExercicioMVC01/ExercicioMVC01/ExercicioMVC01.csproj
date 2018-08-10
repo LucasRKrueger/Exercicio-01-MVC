@@ -98,6 +98,7 @@
     <Content Include="Content\Bootstrap\bootstrap.min.css" />
     <Content Include="DataBase\escolaalunos.sql" />
     <Content Include="Global.asax" />
+    <Content Include="Scripts\Aluno\Aluno.js" />
     <Content Include="Scripts\bootstrap.bundle.js" />
     <Content Include="Scripts\bootstrap.bundle.min.js" />
     <Content Include="Scripts\bootstrap.js" />

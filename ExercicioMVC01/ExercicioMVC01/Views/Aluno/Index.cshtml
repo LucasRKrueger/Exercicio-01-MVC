@@ -35,21 +35,17 @@
                         <td>@aluno.Media</td>
                         <td>@aluno.Frequencia%</td>
                         <td>
-                            @if (Convert.ToSingle(aluno.Media) < 5)
+                            @if ((Convert.ToSingle(aluno.Media) > 7) && (Convert.ToByte(aluno.Frequencia) > 65))
                             {
-                                <span>Reprovado</span>
+                                <span>Aprovado</span>
                             }
-                            else if((Convert.ToSingle(aluno.Media) >= 5 ) && (Convert.ToSingle(aluno.Media) < 7))
+                            else if ((Convert.ToSingle(aluno.Media) >= 5) && (Convert.ToSingle(aluno.Media) < 7) && (Convert.ToByte(aluno.Frequencia) > 65))
                             {
                                 <span>Recuperação</span>
                             }
-                            else if(Convert.ToByte(aluno.Frequencia) < 65)
+                            else if ((Convert.ToSingle(aluno.Media) < 5) || (Convert.ToByte(aluno.Frequencia) < 65))
                             {
                                 <span>Reprovado</span>
-                            }
-                            else if(Convert.ToSingle(aluno.Media) > 7)
-                            {
-                                <span>Aprovado</span>
                             }
                             </td>
                         <td>
